@@ -1,3 +1,5 @@
+
+/* eslint-disable*/
 import React from 'react';
 import {
   ApolloClient,
@@ -44,7 +46,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          {/* <Header /> */}
           <div className="container">
             <Routes>
               <Route 
@@ -59,13 +61,13 @@ function App() {
                 path="/signup" 
                 element={<Signup />} 
               />
-              <Route 
+              {/* <Route 
                 path="/thoughts/:thoughtId" 
                 element={<SingleThought />} 
-              />
+              /> */}
             </Routes>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
