@@ -5,7 +5,7 @@ const options = {
 method: 'GET',
 url: 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back',
 headers: {
-    'X-RapidAPI-Key': '6a7d25eaecmshee44f344abc6669p1ffe03jsnf5b51c7e8f40',
+    'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
 }}
 const Search = () => {
