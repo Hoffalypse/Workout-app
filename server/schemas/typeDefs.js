@@ -8,6 +8,14 @@ const typeDefs = gql`
     savedExcersice:String
   
   }
+  type Exercise{
+    _id:ID
+    bodyPart:String
+    equipment:String
+    gifUrl:String
+    name:String
+    target:String
+  }
   type Query {
     me: User
     users: [User]
