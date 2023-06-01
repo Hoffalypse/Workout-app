@@ -6,7 +6,7 @@ const Home = () => {
     <div style={{ backgroundImage: 'linear-gradient(yellow, red)', width: '100%', height: '100vh'}}>
       <Navbar/>
       <div style={{ textAlign: 'center' }}>
-<h1 style={{ marginTop: '50px' }} >Your Ultimate Workout Builder</h1>
+<h1 style={{ marginTop: '50px' }}>Your Ultimate Workout Builder</h1>
 
 <p style={{ marginRight: 'auto', marginLeft: 'auto', width: '55%' }}>Search through over 1,300 exercises and create a custom workout routine based on the areas you want to target or the home-exercise equipment you have. Everything at Workout Wizard is free. Setup your account or login to access all the exercise information. </p>
 
