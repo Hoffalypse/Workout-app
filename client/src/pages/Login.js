@@ -9,8 +9,8 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
-
+    const [login, { error }] = useMutation(LOGIN_USER);
+   
     // update state based on form input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -25,13 +25,20 @@ const Login = (props) => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         console.log(formState);
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
         try {
+            console.log("29")
             const { data } = await login({
-                variables: { ...formState },
-            });
-
-            Auth.login(data.login.token);
+                variables: { ...formState }
+              });
+            console.log(data)
+           Auth.login(data.login.token);
         } catch (e) {
+    
             console.error(e);
         }
 
@@ -48,12 +55,7 @@ const Login = (props) => {
                 <div className="card">
                     <h4 className="card-header bg-dark text-light p-2">Login</h4>
                     <div className="card-body">
-                        {data ? (
-                            <p>
-                                Success! You may now head{' '}
-                                <Link to="/">back to the homepage.</Link>
-                            </p>
-                        ) : (
+                      
                             <Form onSubmit={handleFormSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
@@ -88,7 +90,7 @@ const Login = (props) => {
                                     Submit
                                 </Button>
                             </Form>
-                        )}
+                    
 
                         {error && (
                             <div className="my-3 p-3 bg-danger text-white">

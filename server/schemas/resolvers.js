@@ -25,6 +25,7 @@ const resolvers={
     Mutation:{
         login:async(parent,{email,password})=>{
             const user=await User.findOne({email})
+            console.log("hi")
             if(!user){
                 throw new AuthenticationError("no user")
             }
