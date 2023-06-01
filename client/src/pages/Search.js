@@ -41,6 +41,8 @@ const options = {
 
 return (
 <div >
+   <div style={{ backgroundImage: 'linear-gradient(yellow, red)', width: '100%', height: '100%'}} >
+
 <div style={{ display: 'flex', margin: '0', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', width: '100%' }}>
       <img style= {{ width: '90px'}}src={ logo }/>
@@ -52,6 +54,8 @@ return (
       <a href='./' className='nav-btn-ind'>Logout</a>
       </div>
     </div>
+    </div>
+    
 <br/><br/>
 <div style={{textAlign: 'center'}}>
 <p style={{fontSize: '24px'}}>Select body section to work on:</p>
@@ -74,18 +78,22 @@ return (
       </Dropdown.Menu>
     </Dropdown> 
     </div>
+    {/* { selectedItem ? '': <div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>} */}
     <br/>
     <div style={{display: 'flex', flexWrap: 'wrap'}}>
     {allExercises.map((exercise, index) => (
-      <div style={{textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>
+      <div style={{  textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>
       <img src={exercise.gifUrl}/>
+      <div style={{backgroundImage: 'linear-gradient(yellow, red)', height: '24vh'}}>
       <p style={{fontWeight: 'bold', maxWidth: '350px'}}>{exercise.name}</p>
       <p>Target: {exercise.target}</p>
       <p style={{marginTop:'-20px', }}>Equipment: {exercise.equipment}</p>
       <Button variant="success">Save</Button>{' '}
       </div>
+      </div>
     ))}
     </div>
 </div>
+
 )}
 export default Search
