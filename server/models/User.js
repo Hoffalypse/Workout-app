@@ -21,10 +21,10 @@ const userSchema = new Schema({
         required: true
     },
 
-    savedExcersice: {
-        type: Schema.Types.ObjectId,
-        ref: "Exercise"
-    }
+    savedExercise: 
+      [ {type: Schema.Types.ObjectId,
+        ref: "Exercise"}]
+    
 }, {
     toJSON: {
         virtuals: true
