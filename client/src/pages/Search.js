@@ -4,6 +4,7 @@ import { Dropdown, Button } from 'react-bootstrap';
 import logo from '../assets/wwlogo.png'
 
 
+
 const Search = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [exerciseName, setExerciseName] = useState(null);
@@ -32,12 +33,12 @@ const options = {
   method: 'GET',
   url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedItem}`,
   headers: {
-    'X-RapidAPI-Key': '563cd7bb84msh36be0b04c2484e7p12f67fjsne1e8a5eb28ed',
+    'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
   }
 };
 
-console.log(allExercises)
+
 return (
 <div >
 <div style={{ display: 'flex', margin: '0', justifyContent: 'space-between' }}>
