@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (<>
-    <Navbar />
+    <Navbar currentPage="home"/>
     <div style={{ backgroundImage: 'linear-gradient(yellow, red)', width: '100%', height: '100vh', marginTop: '0px', paddingTop: '0px' }}>
       <div style={{ textAlign: 'center' }}>
         <h1 style={{ marginTop: '50px' }}>Your Ultimate Workout Builder</h1>
