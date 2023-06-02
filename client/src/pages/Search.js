@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Dropdown, Button } from 'react-bootstrap';
-import logo from '../assets/wwlogo.png'
-
+import { Dropdown } from 'react-bootstrap';
+import logo from '../assets/wwlogo.png';
+import SearchCard from '../components/SearchCard';
 
 
 const Search = () => {
@@ -78,19 +78,13 @@ return (
       </Dropdown.Menu>
     </Dropdown> 
     </div>
-    {/* { selectedItem ? '': <div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>} */}
+   
     <br/>
     <div style={{display: 'flex', flexWrap: 'wrap'}}>
-    {allExercises.map((exercise, index) => (
-      <div style={{  textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>
-      <img src={exercise.gifUrl}/>
-      <div style={{backgroundImage: 'linear-gradient(yellow, red)', height: '24vh'}}>
-      <p style={{fontWeight: 'bold', maxWidth: '350px'}}>{exercise.name}</p>
-      <p>Target: {exercise.target}</p>
-      <p style={{marginTop:'-20px', }}>Equipment: {exercise.equipment}</p>
-      <Button variant="success">Save</Button>{' '}
-      </div>
-      </div>
+    {allExercises.map((exercise) => (
+      <SearchCard exercise={exercise} key={exercise.id}/>
+      
+      
     ))}
     </div>
 </div>
