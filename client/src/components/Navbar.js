@@ -6,15 +6,13 @@ const Navbar = ({ currentPage }) => {
     switch (currentPage) {
       case "signup":
         return (<div className='nav-btn'>
-          <a href='./login' className='nav-btn-ind'>Login</a>
-
           <a href='./' className='nav-btn-ind'>Home</a>
+          <a href='./login' className='nav-btn-ind'>Login</a>
         </div>);
       case "login":
         return (<div className='nav-btn'>
-          <a href='./signup' className='nav-btn-ind'>Signup</a>
-
           <a href='./' className='nav-btn-ind'>Home</a>
+          <a href='./signup' className='nav-btn-ind'>Signup</a>
         </div>)
       case "search":
         return (<div className='nav-btn'>
