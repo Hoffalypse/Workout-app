@@ -8,7 +8,7 @@ const Navbar = () => {
       <h2 style={{ marginTop: '30px', fontSize: '35px', fontStyle: 'italic', fontWeight: 'bolder'}}>Workout Wizard</h2>
       </div>
       <div className='nav-btn'>
-      <a href='./login' className='nav-btn-ind' >Login</a>
+      <a href='./login' className='nav-btn-ind'>Login</a>
 
       <a href='./signup' className='nav-btn-ind'>Signup</a>
       </div>
