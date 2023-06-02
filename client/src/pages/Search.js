@@ -55,7 +55,7 @@ const Search = () => {
           </div>
         </div>
       </div> */}
-    <Navbar />
+    <Navbar currentPage={"search"}/>
       <br /><br />
       <div style={{ textAlign: 'center' }}>
         <p style={{ fontSize: '24px' }}>Select body section to work on:</p>
