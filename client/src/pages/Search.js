@@ -41,27 +41,13 @@ const Search = () => {
 
   return (
     <div >
-      {/* <div style={{ backgroundImage: 'linear-gradient(yellow, red)', width: '100%', height: '100%' }} >
-
-        <div style={{ display: 'flex', margin: '0', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', width: '100%' }}>
-            <img style={{ width: '90px' }} src={logo} />
-            <h2 style={{ marginTop: '30px', fontSize: '35px', fontStyle: 'italic', fontWeight: 'bolder' }}>Workout Wizard</h2>
-          </div>
-          <div className='nav-btn'>
-            <a href='./profile' className='nav-btn-ind' >Profile</a>
-
-            <a href='./' className='nav-btn-ind'>Logout</a>
-          </div>
-        </div>
-      </div> */}
-    <Navbar currentPage={"search"}/>
+     <Navbar currentPage={"search"}/>
       <br /><br />
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '24px' }}>Select body section to work on:</p>
+        <p style={{ fontSize: '24px' }}>Body section to work on:</p>
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
-            {exerciseName ? exerciseName : 'Select an item'}
+            {exerciseName ? exerciseName : 'Select'}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
@@ -80,6 +66,12 @@ const Search = () => {
       </div>
 
       <br />
+      {!selectedItem ? (
+        <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <img style={{ width: '300px'}} src={logo} alt='logo'/>
+        <h1 style={{ fontSize: '90px', fontStyle: 'italic', marginTop: '125px'}}>Workout Wizard</h1>
+        </div>
+      ): ''}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {allExercises.map((exercise) => (
           <SearchCard exercise={exercise} key={exercise.id} />
