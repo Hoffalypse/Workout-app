@@ -46,7 +46,7 @@ const Signup = () => {
     <main className="container flex-row login-heading">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header login-color p-2">Sign Up</h4>
+          <h4 className="card-header login-color p-2">Signup</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -56,10 +56,10 @@ const Signup = () => {
             ) : (
               <Form onSubmit={handleFormSubmit}>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>User Name</Form.Label>
+                  <Form.Label>Username</Form.Label>
                   <Form.Control
                     className="form-input"
-                    placeholder="Your email"
+                    placeholder="Your Username"
                     name="username"
                     type="text"
                     value={formState.name}
@@ -67,10 +67,10 @@ const Signup = () => {
                   />
                 </Form.Group>
                  <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>Email Address</Form.Label>
                   <Form.Control
                     className="form-input"
-                    placeholder="Your email"
+                    placeholder="Your Email"
                     name="email"
                     type="email"
                     value={formState.email}
