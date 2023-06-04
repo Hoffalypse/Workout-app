@@ -5,6 +5,7 @@ import logo from '../assets/wwlogo.png';
 import SearchCard from '../components/SearchCard';
 import Navbar from '../components/Navbar';
 
+
 const Search = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [exerciseName, setExerciseName] = useState(null);
