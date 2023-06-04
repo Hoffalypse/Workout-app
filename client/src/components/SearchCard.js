@@ -1,8 +1,9 @@
 import React from 'react'
-import {Button} from 'react-bootstrap';
-import {SAVE_EXERCISE} from '../utils/mutations';
+import { Button } from 'react-bootstrap';
+import { capitalize } from '../utils/helper';
+import {SAVE_EXERCISE  } from '../utils/mutations';
 import Auth from '../utils/auth';
-import {useMutation} from '@apollo/client';
+import { useMutation } from '@apollo/client';
 const SearchCard = ({exercise}) => {
     const [saveExercise, {
             error
@@ -30,43 +31,17 @@ const SearchCard = ({exercise}) => {
         }
         // add this data to database from here
     }
-    return (<div style={
-        {
-            textAlign: 'center',
-            border: '4px solid black',
-            margin: '5px',
-            borderRadius: '10px'
-        }
-    }>
-        <img src={
-            exercise.gifUrl
-        }/>
-        <div style={
-            {
-                backgroundImage: 'linear-gradient(yellow, red)',
-                height: '24vh'
-            }
-        }>
-            <p style={
-                {
-                    fontWeight: 'bold',
-                    maxWidth: '350px'
-                }
-            }> {
-                exercise.name
-            }</p>
-            <p>Target: {
-                exercise.target
-            }</p>
-            <p style={
-                {marginTop: '-20px'}
-            }>Equipment: {
-                exercise.equipment
-            }</p>
-            <Button variant="success"
-                onClick={handleSaveClick}>Save</Button>
-            {' '} </div>
-    </div>)
+  return (
+    <div style={{  textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>
+      <img src={exercise.gifUrl}/>
+      <div style={{backgroundImage: 'linear-gradient(yellow, red)', height: '24vh'}}>
+      <p style={{fontWeight: 'bold', maxWidth: '350px'}}>{capitalize (exercise.name)}</p>
+      <p>Target: {capitalize (exercise.target)}</p>
+      <p style={{marginTop:'-20px', }}>Equipment: {capitalize (exercise.equipment)}</p>
+      <Button variant="success" onClick={handleSaveClick}>Save</Button>{' '}
+      </div>
+      </div>
+  )
 }
 
 export default SearchCard
