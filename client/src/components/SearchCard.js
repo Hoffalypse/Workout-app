@@ -1,11 +1,35 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
 import { capitalize } from '../utils/helper';
-
+import {SAVE_EXERCISE  } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
 const SearchCard = ({exercise}) => {
-    const handleSaveClick = () => {
-        console.log(exercise)
-        //add this data to database from here
+    const [saveExercise, {
+            error
+        }
+    ] = useMutation(SAVE_EXERCISE);
+    const handleSaveClick = async () => {
+        let {
+            bodyPart, equipment,gifUrl,name, target
+        } = exercise
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+        if (! token) {
+            return false
+        }
+        try {
+            console.log(token)
+            await saveExercise({
+                variables: {
+                    ExerciseInput: {
+                        bodyPart,equipment,gifUrl,name,target
+                    }
+                }
+            })
+        } catch (error) {
+            console.error(error);
+        }
+        // add this data to database from here
     }
   return (
     <div style={{  textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>

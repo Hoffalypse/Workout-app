@@ -25,5 +25,20 @@ export const ADD_USER = gql`
   }
 }
 `;
-
+export const SAVE_EXERCISE = gql`
+  mutation saveExercise($ExerciseInput: ExerciseInput!) {
+    saveExercise(ExerciseInput: $ExerciseInput) {
+      _id
+      username
+      email
+      savedExercise {
+        bodyPart
+        equipment
+        gifUrl
+        name
+        target
+      }
+    }
+  }
+`;
 
