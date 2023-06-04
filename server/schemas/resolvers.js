@@ -1,4 +1,5 @@
 const { User } = require("../models");
+const { Exercise } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const resolvers={
@@ -25,7 +26,7 @@ const resolvers={
     Mutation:{
         login:async(parent,{email,password})=>{
             const user=await User.findOne({email})
-            console.log("hi")
+           
             if(!user){
                 throw new AuthenticationError("no user")
             }
@@ -41,7 +42,22 @@ const resolvers={
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user };
-        }
+        },
+        saveExercise: async (parent, { ExerciseInput }, context) => {
+          console.dir(context.user);
+         // console.log(ExerciseInput);
+          if (context.user) {
+          
+        
+            const updateUser = await User.findByIdAndUpdate(
+              { _id: context.user._id },
+              { $push: { savedExercise: ExerciseInput } },
+              { new: true }
+            );
+            return updateUser;
+          }
+          throw new AuthenticationError("You need to be logged in!");
+        },
         }
     }
 module.exports=resolvers

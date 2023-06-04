@@ -23,10 +23,19 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
   }
+  input ExerciseInput {
+    bodyPart: String
+    equipment: String
+    gifUrl: String!
+    name: String
+    target: String
+  
+  }
 
  type Mutation {
     login(email:String!, password:String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    saveExercise(ExerciseInput: ExerciseInput): User
 }
   type Auth {
     token: ID!

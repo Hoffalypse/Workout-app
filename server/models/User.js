@@ -1,6 +1,6 @@
 const {Schema, model, mongo} = require('mongoose');
 const bcrypt = require('bcrypt');
-
+const exerciseSchema=require('./Exercise')
 // import schema from Book.js
 // const bookSchema = require('./Book');
 
@@ -8,7 +8,7 @@ const userSchema = new Schema({
     username: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     email: {
         type: String,
@@ -21,10 +21,10 @@ const userSchema = new Schema({
         required: true
     },
 
-    savedExercise: 
-      [ {type: Schema.Types.ObjectId,
-        ref: "Exercise"}]
-    
+    savedExercise: [
+        exerciseSchema
+    ]
+
 }, {
     toJSON: {
         virtuals: true
