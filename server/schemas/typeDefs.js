@@ -19,6 +19,7 @@ const typeDefs = gql`
     target:String
   }
   type Query {
+    getUser:User
     me: User
     users: [User]
     user(username: String!): User
@@ -36,6 +37,7 @@ const typeDefs = gql`
     login(email:String!, password:String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveExercise(ExerciseInput: ExerciseInput): User
+ 
 }
   type Auth {
     token: ID!
