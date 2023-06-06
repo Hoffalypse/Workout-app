@@ -22,6 +22,16 @@ const resolvers={
               .select("-__v -password")
               
           },
+          getUser:async(parent, args, context)=>{
+            console.log(context.user)
+            if(context.user){
+              const userData=  await User.findOne({ _id:context.user._id })
+              .select("-__v -password")
+         
+              return userData
+            }
+            throw new AuthenticationError("somthing wrong");
+          }
     },
     Mutation:{
         login:async(parent,{email,password})=>{
@@ -44,7 +54,7 @@ const resolvers={
             return { token, user };
         },
         saveExercise: async (parent, { ExerciseInput }, context) => {
-          console.dir(context.user);
+          //console.dir(context.user);
          // console.log(ExerciseInput);
           if (context.user) {
           

@@ -15,14 +15,20 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-    }
+export const QUERY_EXE = gql`
+  query getUser {
+    getUser{ _id
+    email
+    username
+    savedExercise 
+      {
+        _id
+        equipment
+        gifUrl
+        name
+        target
+        bodyPart}
+      },
   }
 `;
 
