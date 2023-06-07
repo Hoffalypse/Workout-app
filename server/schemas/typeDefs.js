@@ -11,6 +11,7 @@ const typeDefs = gql`
   
   } 
    type Exercise {
+   
     _id:ID
     bodyPart:String
     equipment:String
@@ -23,6 +24,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
+    getEXE(bodyName:String):[Exercise]
   }
   input ExerciseInput {
     bodyPart: String

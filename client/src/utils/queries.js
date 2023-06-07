@@ -31,6 +31,19 @@ export const QUERY_EXE = gql`
       },
   }
 `;
+export const QUERY_GET_EXE = gql`
+  query getEXE($bodyName:String!) {
+   
+    getEXE(bodyName:$bodyName) { 
+
+    bodyPart
+    equipment
+    gifUrl
+    name
+    target}
+      
+  }
+`;
 
 export const QUERY_SINGLE_THOUGHT = gql`
   query getSingleThought($thoughtId: ID!) {

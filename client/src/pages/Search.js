@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useMutation, useQuery } from "@apollo/client";
 import { Dropdown } from "react-bootstrap";
 import logo from "../assets/wwlogo.png";
 import SearchCard from "../components/SearchCard";
 import Navbar from "../components/Navbar";
-
+import { QUERY_GET_EXE } from "../utils/queries";
 const Search = () => {
+
   const [selectedItem, setSelectedItem] = useState(null);
   const [exerciseName, setExerciseName] = useState(null);
   const [allExercises, setAllExercises] = useState([]);
-
+const { data } = useQuery(QUERY_GET_EXE,{ variables: { bodyName: selectedItem }});
   const handleItemClick = (item, name) => {
     setSelectedItem(item);
     setExerciseName(name);
+    let datahere=  data?.getEXE
+
+    setAllExercises(datahere);
+    console.log(allExercises)
   };
   // useEffect(() => {
   //   const getexcersise = async () => {
@@ -38,18 +44,14 @@ const Search = () => {
   // };
 
   useEffect(() => {
-    const getExercises = async () => {
-      try {
-        const response = await axios.get(`/exercises/${selectedItem}`);
-        setAllExercises(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    //const dataHere =  data?.getUser?.savedExercise;
+    //setAllExercises(dataHere)
+   // console.log(dataHere)
+   let datahere=  data?.getEXE
+
+   setAllExercises(datahere);
   
-    if (selectedItem) {
-      getExercises();
-    }
+  
   }, [selectedItem]);
 
   return (
@@ -75,7 +77,7 @@ const Search = () => {
               Chest
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => handleItemClick("shoulders", "Shoulders")}
+              onClick={() => handleItemClick("shoulders", "shoulders")}
             >
               Shoulders
             </Dropdown.Item>
@@ -127,7 +129,7 @@ const Search = () => {
         ""
       )}
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {allExercises.map((exercise) => (
+        {allExercises?.map((exercise) => (
           <SearchCard exercise={exercise} key={exercise.id} />
         ))}
       </div>

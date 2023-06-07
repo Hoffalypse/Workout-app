@@ -4,6 +4,38 @@ const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 const resolvers={
     Query:{
+      getEXE:async(parent,{bodyName})=>{
+   
+  const options = {
+    method: "GET", 
+      mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin",
+    url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/back`,
+    headers: {
+      "Content-Type": "application/json",
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    },
+  };
+  try {
+    const getexcersise=await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyName}`,{
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+      },
+    })  
+    const data=await getexcersise.json()
+ 
+
+    return data
+  
+  } catch (error) {
+    console.log(error )
+  }
+
+      },
         me: async (parent, args, context) => {
      
             if (context.user) {
