@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 // create exerciseSchema with bodyPart, equipment, gifUrl, id, name and target from this api url https://exercisedb.p.rapidapi.com/exercises/bodyPart/%7BbodyPart%7D
 
 const exerciseSchema = new Schema({
+  
   bodyPart: {
     type: String,
     required: true,
