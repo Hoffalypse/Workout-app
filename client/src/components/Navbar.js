@@ -20,6 +20,12 @@ const Navbar = ({ currentPage }) => {
 
           <a href='./' className='nav-btn-ind'>Logout</a>
         </div>)
+        case "Profile":
+          return (<div className='nav-btn'>
+            <a href='./search' className='nav-btn-ind'>Search</a>
+  
+            <a href='./' className='nav-btn-ind'>Logout</a>
+          </div>)
       case "home":
         return (<div className='nav-btn'>
           <a href='./login' className='nav-btn-ind'>Login</a>

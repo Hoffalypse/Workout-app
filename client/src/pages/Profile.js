@@ -87,7 +87,7 @@ const Profile = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar currentPage='Profile'/>
       {back.length !== 0 ? <ProfileCard exPart="Back" exerciseData={back} /> : ""}
 
       {neck.length !== 0 ? <ProfileCard exPart="Neck" exerciseData={neck} /> : ""}
