@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-require('dotenv').config()
+
 
 router.get('/exercises/:selectedItem', async (req, res) => {
     const { selectedItem } = req.params;
-  console.log('hello', process.env)
+  console.log('hello', process.env.RAPIDAPI_API_KEY)
   console.log(selectedItem)
     try {
 
