@@ -1,4 +1,4 @@
-# local-events-finder
+# workout-wizard-app
 
 ### Table of Contents
 
