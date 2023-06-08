@@ -16,7 +16,7 @@ const Home = () => {
 
       </div>
     
-      <div className='col-xs-12 col-s-6 col-md-6 col-l-4 col-xl-4' style={{padding:"30px"}} ><img className='img-home img-responsive' src='http://d205bpvrqc9yn1.cloudfront.net/2333.gif' alt='arm slingers hanging straight legs' /></div>  
+      <div className='col-xs-12 col-s-6 col-md-6 col-l-4 col-xl-4' style={{padding:"30px"}} ><img className='img-home img-responsive' src='https://edbv2-ff7foj6vca-uc.a.run.app/image/4MYrqHr69=baCt' alt='arm slingers hanging straight legs' /></div>  
       <div className='col-xs-12 col-s-6 col-md-6 col-l-4 col-xl-4'style={{padding:"30px"}}> <img className='img-home' src='http://d205bpvrqc9yn1.cloudfront.net/3361.gif' alt='skater hops' /></div>   
       <div className='col-xs-12 col-s-6 col-md-6 col-l-4 col-xl-4' style={{padding:"30px"}}> <img className='img-home' src='http://d205bpvrqc9yn1.cloudfront.net/0301.gif' alt='dumbbell decline bench press' /></div>    
 
