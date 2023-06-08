@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Button from 'react-bootstrap/Button';
@@ -9,6 +9,7 @@ import Navbar from '../components/Navbar';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
+    // let navigate = 
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error }] = useMutation(LOGIN_USER);
    
@@ -25,18 +26,18 @@ const Login = (props) => {
     // submit form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+        
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
           }
         try {
-            console.log("29")
+            
             const { data } = await login({
                 variables: { ...formState }
               });
-            console.log(data)
+            
            Auth.login(data.login.token);
         } catch (e) {
     
