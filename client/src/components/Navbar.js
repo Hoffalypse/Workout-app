@@ -11,35 +11,30 @@ const Navbar = ({ currentPage }) => {
     switch (currentPage) {
       case "signup":
         return (<div className='nav-btn'>
-          <Button onClick={() => navigate('/')} >Home
-            </Button>
-          {/* <a href='./' className='nav-btn-ind'>Home</a>
-          <a href='./login' className='nav-btn-ind'>Login</a> */}
+          <Button className='nav-btn-ind' onClick={() => navigate('/')}>Home</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/login')}>Login</Button>
         </div>);
       case "login":
         return (<div className='nav-btn'>
-          <a href='./' className='nav-btn-ind'>Home</a>
-          <a href='./signup' className='nav-btn-ind'>Signup</a>
-        </div>)
+          <Button className='nav-btn-ind' onClick={() => navigate('/')}>Home</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/signup')}>Signup</Button>
+    </div>)
       case "search":
         return (<div className='nav-btn'>
-          <a href='./profile' className='nav-btn-ind'>Profile</a>
-
-          <a href='./' className='nav-btn-ind'>Logout</a>
+          <Button className='nav-btn-ind' onClick={() => navigate('/profile')}>Profile</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/')}>Logout</Button>
+          
         </div>)
         case "Profile":
           return (<div className='nav-btn'>
-            <a href='./search' className='nav-btn-ind'>Search</a>
-  
-            <a href='./' className='nav-btn-ind'>Logout</a>
-          </div>)
+              <Button className='nav-btn-ind' onClick={() => navigate('/search')}>Search</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/')}>Logout</Button>
+            </div>)
       case "home":
         return (<div className='nav-btn'>
-          <Button onClick={() => navigate('/login')} >Login
-            </Button>
-          {/* <a href='./login' className='nav-btn-ind'>Login</a>
-
-          <a href='./signup' className='nav-btn-ind'>Signup</a> */}
+          <Button className='nav-btn-ind' onClick={() => navigate('/login')}>Login</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/signup')}>Signup</Button>
+  
         </div>)
     }
   }
