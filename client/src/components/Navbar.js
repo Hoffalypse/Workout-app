@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 import logo from '../assets/wwlogo.png'
+import {useNavigate} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
+
 const Navbar = ({ currentPage }) => {
+
+  let navigate = useNavigate()
 
   const renderLink = () => {
     switch (currentPage) {
       case "signup":
         return (<div className='nav-btn'>
-          <a href='./' className='nav-btn-ind'>Home</a>
-          <a href='./login' className='nav-btn-ind'>Login</a>
+          <Button onClick={() => navigate('/')} >Home
+            </Button>
+          {/* <a href='./' className='nav-btn-ind'>Home</a>
+          <a href='./login' className='nav-btn-ind'>Login</a> */}
         </div>);
       case "login":
         return (<div className='nav-btn'>
@@ -28,9 +35,11 @@ const Navbar = ({ currentPage }) => {
           </div>)
       case "home":
         return (<div className='nav-btn'>
-          <a href='./login' className='nav-btn-ind'>Login</a>
+          <Button onClick={() => navigate('/login')} >Login
+            </Button>
+          {/* <a href='./login' className='nav-btn-ind'>Login</a>
 
-          <a href='./signup' className='nav-btn-ind'>Signup</a>
+          <a href='./signup' className='nav-btn-ind'>Signup</a> */}
         </div>)
     }
   }
