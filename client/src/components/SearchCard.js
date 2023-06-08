@@ -39,7 +39,7 @@ const SearchCard = ({exercise}) => {
         }
         // add this data to database from here
     }
-    console.log(exercise.gifUrl)
+    console.log(exercise)
   return (
     <div style={{  textAlign: 'center', border: '4px solid black', margin:'5px', borderRadius: '10px'}}>
       <img src={exercise.gifUrl}/>

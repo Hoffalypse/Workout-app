@@ -1,67 +1,35 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Dropdown } from "react-bootstrap";
 import logo from "../assets/wwlogo.png";
 import SearchCard from "../components/SearchCard";
 import Navbar from "../components/Navbar";
 import { QUERY_GET_EXE } from "../utils/queries";
 const Search = () => {
-
   const [selectedItem, setSelectedItem] = useState(null);
   const [exerciseName, setExerciseName] = useState(null);
   const [allExercises, setAllExercises] = useState([]);
-const { data } = useQuery(QUERY_GET_EXE,{ variables: { bodyName: selectedItem }});
+  const { data } = useQuery(QUERY_GET_EXE, {
+    variables: { bodyName: selectedItem },
+  });
   const handleItemClick = (item, name) => {
     setSelectedItem(item);
     setExerciseName(name);
-    // let datahere=  data?.getEXE
-
-    // //setAllExercises(datahere);
-    // console.log(allExercises)
   };
-  // useEffect(() => {
-  //   const getexcersise = async () => {
-  //     try {
-  //       const res = await axios.request(options);
-  //       // console.log(res.data)
-  //       setAllExercises(res.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   if (selectedItem) {
-  //     getexcersise();
-  //   }
-  // }, [selectedItem]);
-  // const options = {
-  //   method: "GET",
-  //   url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedItem}`,
-  //   headers: {
-  //     "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-  //     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-  //   },
-  // };
 
   useEffect(() => {
-    //const dataHere =  data?.getUser?.savedExercise;
-    //setAllExercises(dataHere)
-   // console.log(dataHere)
-   const getexcersise=async ()=>{
-    try {
-      if(data){
-    let dataHere= await data?.getEXE
-   console.log(dataHere)
-   setAllExercises(dataHere);
+    const getexcersise = async () => {
+      try {
+        if (data) {
+          let dataHere = await data?.getEXE;
+          console.log(dataHere);
+          setAllExercises(dataHere);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    
-    } catch (error) {
-      console.log(error)
-    }
-   }
- getexcersise()
-  
-  
+    };
+    getexcersise();
   }, [data]);
 
   return (
