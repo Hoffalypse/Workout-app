@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_EXE } from "../utils/queries";
-import SearchCard from "../components/SearchCard";
 import Navbar from "../components/Navbar";
-import { capitalize } from "../utils/helper";
+
 import ProfileCard from "../components/ProfileCard";
 
 const Profile = () => {
