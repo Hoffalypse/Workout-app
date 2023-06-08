@@ -6,7 +6,6 @@ const exerciseSchema = new Schema({
   bodyPart: {
     type: String,
     required: true,
-    // unique: true
   },
   equipment: {
     type: String,

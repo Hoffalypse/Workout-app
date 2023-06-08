@@ -4,6 +4,7 @@ import { capitalize } from '../utils/helper';
 import {SAVE_EXERCISE  } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
+
 const SearchCard = ({exercise}) => {
     const [saveExercise, {
             error
