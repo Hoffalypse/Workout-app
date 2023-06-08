@@ -7,16 +7,22 @@
   text-align: end;
   margin-top: 30px;
   font-weight: bold;
+  display: flex;
 
 }
 
 .nav-btn-ind:hover {
   text-decoration: underline;
+  background-color: transparent;
 }
 
 .nav-btn-ind {
   margin-right: 45px;
   font-size: 18px;
+  border: none;
+  color: black;
+  font-weight: bold;
+  background-color: transparent;
 }
 
 .img-home {
