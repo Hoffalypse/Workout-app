@@ -15,10 +15,10 @@ const { data } = useQuery(QUERY_GET_EXE,{ variables: { bodyName: selectedItem }}
   const handleItemClick = (item, name) => {
     setSelectedItem(item);
     setExerciseName(name);
-    let datahere=  data?.getEXE
+    // let datahere=  data?.getEXE
 
-    setAllExercises(datahere);
-    console.log(allExercises)
+    // //setAllExercises(datahere);
+    // console.log(allExercises)
   };
   // useEffect(() => {
   //   const getexcersise = async () => {
@@ -47,12 +47,22 @@ const { data } = useQuery(QUERY_GET_EXE,{ variables: { bodyName: selectedItem }}
     //const dataHere =  data?.getUser?.savedExercise;
     //setAllExercises(dataHere)
    // console.log(dataHere)
-   let datahere=  data?.getEXE
-
-   setAllExercises(datahere);
+   const getexcersise=async ()=>{
+    try {
+      if(data){
+    let dataHere= await data?.getEXE
+   console.log(dataHere)
+   setAllExercises(dataHere);
+      }
+    
+    } catch (error) {
+      console.log(error)
+    }
+   }
+ getexcersise()
   
   
-  }, [selectedItem]);
+  }, [data]);
 
   return (
     <div>
@@ -77,7 +87,7 @@ const { data } = useQuery(QUERY_GET_EXE,{ variables: { bodyName: selectedItem }}
               Chest
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => handleItemClick("shoulders", "shoulders")}
+              onClick={() => handleItemClick("shoulders", "Shoulders")}
             >
               Shoulders
             </Dropdown.Item>
