@@ -1,4 +1,4 @@
-# local-events-finder
+# workout-wizard-app
 
 ### Table of Contents
 
@@ -66,7 +66,7 @@ The site used an API to compile data and receive exercise information. It is:
 
 <br>
 
-- RapidAI
+- ExerciseDB's API:
 https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
 
 
