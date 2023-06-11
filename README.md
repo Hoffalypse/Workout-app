@@ -6,6 +6,8 @@
 
 - [Acceptance Criteria](#acceptance-criteria)
 
+- [Images](#images)
+
 - [Description](#description)
 
 - [Technology](#technology)
@@ -19,15 +21,15 @@
 - [License](#license)
 
 # User Story
-
+```md
 - AS A USER who wants to build my own workout
 - I WANT to be able to choose specific exercises targeted by body part
 - SO THAT I can customize my workout specific to my needs
-
+```
 <p>&nbsp;</p>
 
 # Acceptance Criteria
-
+```md
 - GIVEN I am wanting to workout 
 - WHEN I go to the Workout Wizard application
 - THEN I am presented with a home page 
@@ -38,7 +40,7 @@
 - THEN I can select to save the exercises to my profile 
 - WHEN I logout
 - THEN the saved exercises persist
-
+```
 
 # Images
 
@@ -76,9 +78,9 @@ https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
 
 <p>&nbsp;</p>
 
-https://github.com/Nmargolis00/image-AI
+Github: https://github.com/999888Z/workout-wizard-app <br>
 
-https://imageai.herokuapp.com/
+Heroku: https://workout-wizard-app-99.herokuapp.com/
 
 
 <p>&nbsp;</p>
