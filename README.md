@@ -44,8 +44,8 @@
 
 # Images
 
-![Home Page](./public/images/Website%20Screenshot%20Community%20Page.png);
-![Login Page](./public/images/Screenshot%20Login.png);
+![Home Page](./client/src/assets/homepage.png);<br>
+![Search Page](./client/src/assets/searchpage.png);
 
 # Description
 
