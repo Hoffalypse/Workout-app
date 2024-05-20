@@ -8,21 +8,28 @@ const Navbar = ({ currentPage }) => {
   let navigate = useNavigate()
 
   const renderLink = () => {
+    // eslint-disable-next-line default-case
     switch (currentPage) {
       case "signup":
         return (<div className='nav-btn'>
           <Button className='nav-btn-ind' onClick={() => navigate('/')}>Home</Button>
           <Button className='nav-btn-ind' onClick={() => navigate('/login')}>Login</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/search')}>Search</Button>
+
         </div>);
       case "login":
         return (<div className='nav-btn'>
           <Button className='nav-btn-ind' onClick={() => navigate('/')}>Home</Button>
           <Button className='nav-btn-ind' onClick={() => navigate('/signup')}>Signup</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/search')}>Search</Button>
+
     </div>)
       case "search":
         return (<div className='nav-btn'>
           <Button className='nav-btn-ind' onClick={() => navigate('/profile')}>Profile</Button>
           <Button className='nav-btn-ind' onClick={() => navigate('/')}>Logout</Button>
+          <Button className='nav-btn-ind' onClick={() => navigate('/search')}>Search</Button>
+
           
         </div>)
         case "Profile":
@@ -34,7 +41,8 @@ const Navbar = ({ currentPage }) => {
         return (<div className='nav-btn'>
           <Button className='nav-btn-ind' onClick={() => navigate('/login')}>Login</Button>
           <Button className='nav-btn-ind' onClick={() => navigate('/signup')}>Signup</Button>
-  
+          <Button className='nav-btn-ind' onClick={() => navigate('/search')}>Search</Button>
+
         </div>)
     }
   }
@@ -44,8 +52,8 @@ const Navbar = ({ currentPage }) => {
 
       <div style={{ display: 'flex', margin: '0', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', width: '100%' }}>
-          <img style={{ width: '90px' }} src={logo} />
-          <h2 style={{ marginTop: '30px', fontSize: '35px', fontStyle: 'italic', fontWeight: 'bolder' }}>Workout Wizard</h2>
+          <img style={{ width: '90px' }} src={logo} alt='Hoff is great'/>
+          <h2 style={{ marginTop: '30px', fontSize: '35px', fontStyle: 'italic', fontWeight: 'bolder' }}>Hoff's Workouts</h2>
         </div>
         {renderLink()}
         {/* <div className='nav-btn'>

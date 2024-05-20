@@ -16,7 +16,7 @@ const ProfileCard = ({exPart, exerciseData}) => {
                   borderRadius: "10px",
                 }}
               >
-                <img src={ex.gifUrl} />
+                <img src={ex.gifUrl} alt='Hoff Rules' />
                 <div
                   style={{
                     backgroundImage: "linear-gradient(yellow, red)",

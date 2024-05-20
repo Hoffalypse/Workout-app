@@ -1,36 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
 import { Dropdown } from "react-bootstrap";
+import axios from 'axios'; // Import Axios
 import logo from "../assets/wwlogo.png";
 import SearchCard from "../components/SearchCard";
 import Navbar from "../components/Navbar";
-import { QUERY_GET_EXE } from "../utils/queries";
+
 const Search = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [exerciseName, setExerciseName] = useState(null);
   const [allExercises, setAllExercises] = useState([]);
-  const { data } = useQuery(QUERY_GET_EXE, {
-    variables: { bodyName: selectedItem },
-  });
+
+  const fetchData = async (selectedBodyPart) => {
+    try {
+      const response = await axios.get(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedBodyPart}`, {
+        params: { limit: '10' },
+        headers: {
+          'X-RapidAPI-Key': '2ab020db8cmsh21324bfdaa7b502p1595a2jsnbe0be0637a64',
+          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+        }
+      });
+      setAllExercises(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleItemClick = (item, name) => {
     setSelectedItem(item);
     setExerciseName(name);
+    fetchData(item); // Call fetchData with selected body part
   };
 
   useEffect(() => {
-    const getexcersise = async () => {
-      try {
-        if (data) {
-          let dataHere = await data?.getEXE;
-          console.log(dataHere);
-          setAllExercises(dataHere);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getexcersise();
-  }, [data]);
+    if (selectedItem) {
+      fetchData(selectedItem); // Fetch data initially if a body part is already selected
+    }
+  }, [selectedItem]);
 
   return (
     <div>
@@ -45,7 +50,7 @@ const Search = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => handleItemClick("back", "Back")}>
+          <Dropdown.Item onClick={() => handleItemClick("back", "Back")}>
               Back
             </Dropdown.Item>
             <Dropdown.Item onClick={() => handleItemClick("neck", "Neck")}>
@@ -114,4 +119,5 @@ const Search = () => {
     </div>
   );
 };
+
 export default Search;

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useMutation, useQuery } from "@apollo/client";
-import { QUERY_EXE } from "../utils/queries";
 import Navbar from "../components/Navbar";
 
 import ProfileCard from "../components/ProfileCard";
 
 const Profile = () => {
-  const { data } = useQuery(QUERY_EXE);
   const [allExercises, setAllExercises] = useState([]);
   const [back, setBack] = useState([]);
   const [neck, setNeck] = useState([]);
@@ -20,17 +17,6 @@ const Profile = () => {
   const [cardio, setCardio] = useState([]);
   
 
-  useEffect(() => {
-    const all = async () => {
-      if (data) {
-        const dataHere = await data?.getUser?.savedExercise;
-
-        setAllExercises(dataHere);
-      }
-    };
-
-    all();
-  }, [data]);
 
   useEffect(() => {
     const filterAllExercises = async () => {

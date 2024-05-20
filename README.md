@@ -1,108 +1,70 @@
-# workout-wizard-app
+# Getting Started with Create React App
 
-### Table of Contents
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- [User Story](#user-story)
+## Available Scripts
 
-- [Acceptance Criteria](#acceptance-criteria)
+In the project directory, you can run:
 
-- [Images](#images)
+### `npm start`
 
-- [Description](#description)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- [Technology](#technology)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- [Links](#links)
+### `npm test`
 
-- [Credits](#credits)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- [Acknowledgments](#acknowledgments)
+### `npm run build`
 
-- [License](#license)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-# User Story
-```md
-- AS A USER who wants to build my own workout
-- I WANT to be able to choose specific exercises targeted by body part
-- SO THAT I can customize my workout specific to my needs
-```
-<p>&nbsp;</p>
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-# Acceptance Criteria
-```md
-- GIVEN I am wanting to workout 
-- WHEN I go to the Workout Wizard application
-- THEN I am presented with a home page 
-- WHEN I enter my login credentials or signup
-- THEN I am presented with search page
-- WHEN I select a body part
-- THEN I am presented with exercises tailored to that body part
-- THEN I can select to save the exercises to my profile 
-- WHEN I logout
-- THEN the saved exercises persist
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# Images
+### `npm run eject`
 
-![Home Page](./client/src/assets/homepage.png);<br>
-![Search Page](./client/src/assets/searchpage.png);
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# Description
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Developed an application that uses REACT and RapidAI to generate exercises/workouts based on user input
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-# Technology
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- REACT
-- GraphQL with Node.js/Express.js 
-- MongoDB and Mongoose ODM
-- Third-party API
-- Queries and mutation for retrieving, adding, updating and deleting data
-- JSON Web Token (JWT) Authentication
-- Netlify
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-<p>&nbsp;</p>
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-The site used an API to compile data and receive exercise information. It is:
+### Code Splitting
 
-<br>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- ExerciseDB's API:
-https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-<p>&nbsp;</p>
+### Making a Progressive Web App
 
-# Links
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-<p>&nbsp;</p>
+### Advanced Configuration
 
-Github: https://github.com/999888Z/workout-wizard-app <br>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Heroku: https://workout-wizard-app-99.herokuapp.com/
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-<p>&nbsp;</p>
+### `npm run build` fails to minify
 
-# Credits
-| Name | GitHub |
-|------|--------|
-| John Wilday | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/999888Z)
-| Najiba Haidari | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Najiba-Haidari)
-| Jancy Polzkill | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/jancypp)
-| Kumenger Beyene | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/kumenger)
-
-<p>&nbsp;</p>
-
-# Acknowledgments
-
-Kirtley Adams (Teaching Assistant) <br>
-
-Dan Kaltenbaugh (Instructor)<br>
-
-George Yoo (Teaching Assisstant)
-
-# License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
